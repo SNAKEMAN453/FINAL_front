@@ -1,0 +1,226 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #fffbe7;
+    color: #2d1e2f;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #ff4e50;
+    color: #fffbe7;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.logo {
+    font-size: 2.5rem;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    display: inline-block;
+}
+.nav {
+    float: right;
+}
+.nav a {
+    color: #fffbe7;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.nav a:hover {
+    color: #ffe082;
+}
+.hero {
+    background: linear-gradient(135deg, #ff4e50 60%, #f9d423 100%);
+    color: #fffbe7;
+    text-align: center;
+    padding: 80px 0 60px 0;
+}
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: 'Pacifico', cursive;
+}
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+.cta-btn {
+    background: #2d1e2f;
+    color: #ffe082;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s;
+}
+.cta-btn:hover {
+    background: #ffe082;
+    color: #2d1e2f;
+}
+.menu {
+    background: #ffe082;
+    padding: 60px 0;
+    text-align: center;
+}
+.menu h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-family: 'Pacifico', cursive;
+}
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.menu-item {
+    background: #fffbe7;
+    border: 2px solid #ff4e50;
+    border-radius: 16px;
+    width: 260px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    text-align: left;
+    transition: transform 0.2s;
+}
+.menu-item:hover {
+    transform: scale(1.04);
+    border-color: #2d1e2f;
+}
+.menu-item h3 {
+    margin-top: 0;
+    color: #ff4e50;
+    font-family: 'Pacifico', cursive;
+}
+.menu-item p {
+    margin: 10px 0 0 0;
+}
+.menu-item .price {
+    color: #2d1e2f;
+    font-weight: bold;
+    float: right;
+}
+.about {
+    background: #fffbe7;
+    padding: 60px 0;
+    text-align: center;
+}
+.about h2 {
+    font-size: 2.2rem;
+    font-family: 'Pacifico', cursive;
+}
+.gallery {
+    background: #f9d423;
+    padding: 60px 0;
+    text-align: center;
+}
+.gallery h2 {
+    font-size: 2.2rem;
+    font-family: 'Pacifico', cursive;
+}
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.gallery-images img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #ff4e50;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    background: #fffbe7;
+}
+.contact {
+    background: #fffbe7;
+    padding: 60px 0;
+    text-align: center;
+}
+.contact h2 {
+    font-size: 2.2rem;
+    font-family: 'Pacifico', cursive;
+}
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid #ff4e50;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fffbe7;
+    resize: none;
+}
+.contact-form button {
+    background: #ff4e50;
+    color: #fffbe7;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contact-form button:hover {
+    background: #2d1e2f;
+}
+.footer {
+    background: #2d1e2f;
+    color: #ffe082;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+@media (max-width: 800px) {
+    .menu-items, .gallery-images {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 500px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .menu-item {
+        width: 90vw;
+        min-width: 0;
+    }
+    .gallery-images img {
+        width: 90vw;
+        height: 120px;
+    }
+}
