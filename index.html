@@ -6,6 +6,7 @@
     <title>Maku - Pizza & Burgers</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="js/script.js"></script>
 </head>
 <body>
@@ -13,71 +14,66 @@
     <header class="header">
         <div class="container">
             <h1 class="logo">Maku</h1>
-            <nav class="nav">
+            <button id="burger-btn" class="burger-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav" aria-label="Main Navigation">
                 <a href="#hero">Home</a>
                 <a href="#menu">Menu</a>
                 <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <h2>Welcome to Maku</h2>
-            <p>The best retro pizza & burger experience in town!</p>
-            <a href="#menu" class="cta-btn">See Our Menu</a>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu">
-        <div class="container">
-            <h2>Our Menu</h2>
-            <div class="menu-buttons">
-                <button id="load-burgers" class="load-btn">Load More Burgers</button>
-                <button id="load-pizzas" class="load-btn">Load More Pizzas</button>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2>Welcome to Maku</h2>
+                <p>The best retro pizza & burger experience in town!</p>
+                <a href="#menu" class="cta-btn">See Our Menu</a>
             </div>
-            <div id="menu-items" class="menu-items">
-                <!-- Menu items will be loaded here by JS -->
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu">
+            <div class="container">
+                <h2>Our Menu</h2>
+                <div class="menu-buttons">
+                    <button id="load-burgers" class="load-btn">Load More Burgers</button>
+                    <button id="load-pizzas" class="load-btn">Load More Pizzas</button>
+                </div>
+                <div id="menu-items" class="menu-items">
+                    <!-- Menu items will be loaded here by JS -->
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Maku</h2>
-            <p>Maku brings you the classic taste of pizzas and burgers in a retro setting. Our recipes are inspired by the golden era of diners, with a modern twist!</p>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-images">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza" />
-                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" alt="Burger" />
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Retro Diner" />
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Maku</h2>
+                <p>Maku brings you the classic taste of pizzas and burgers in a retro setting. Our recipes are inspired by the golden era of diners, with a modern twist!</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Your Email" required />
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form class="contact-form" autocomplete="off" novalidate>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required />
+                    <input type="email" id="email" name="email" placeholder="Your Email" required />
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Password" required />
+                    </div>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -85,5 +81,9 @@
             <p>&copy; 2024 Maku. All rights reserved.</p>
         </div>
     </footer>
+    <button id="scrollTopBtn" style="display:none;position:fixed;bottom:30px;right:30px;z-index:50;padding:12px 18px;background:#8b2f3c;color:#fff;border:none;border-radius:50%;font-size:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.13);cursor:pointer;">↑</button>
+    <div id="cookieNotice" style="display:none;position:fixed;bottom:0;left:0;width:100vw;background:#17677a;color:#fff;padding:18px 10px 18px 10px;text-align:center;z-index:100;box-shadow:0 -2px 8px rgba(0,0,0,0.13);font-size:1.1rem;">
+        This website uses cookies to ensure you get the best experience. <button id="acceptCookies" style="margin-left:18px;padding:8px 18px;background:#c9a74a;color:#2a2323;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">Accept</button>
+    </div>
 </body>
 </html>

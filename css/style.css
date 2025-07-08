@@ -1,5 +1,5 @@
 body {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
+    font-family: 'Roboto', 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
     background: #f3ede7;
     color: #2a2323;
     margin: 0;
@@ -24,7 +24,7 @@ body {
 }
 .logo {
     font-size: 2.8rem;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     letter-spacing: 3px;
     margin: 0;
     display: inline-block;
@@ -55,7 +55,7 @@ body {
 .hero h2 {
     font-size: 3.2rem;
     margin-bottom: 10px;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     text-shadow: 2px 2px 0 #c9a74a, 4px 4px 0 #2a2323;
 }
 .hero p {
@@ -74,7 +74,7 @@ body {
     box-shadow: 0 4px 16px rgba(0,0,0,0.13);
     border: 3px solid #8b2f3c;
     transition: background 0.2s, color 0.2s, border 0.2s;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Roboto', 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
 }
 .cta-btn:hover {
     background: #17677a;
@@ -90,7 +90,7 @@ body {
 .menu h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     color: #8b2f3c;
     text-shadow: 2px 2px 0 #c9a74a;
 }
@@ -111,7 +111,7 @@ body {
     text-align: left;
     transition: transform 0.2s, border 0.2s;
     position: relative;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Roboto', 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
 }
 .menu-item:hover {
     transform: scale(1.05) rotate(-2deg);
@@ -120,7 +120,7 @@ body {
 .menu-item h3 {
     margin-top: 0;
     color: #17677a;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     font-size: 1.3rem;
     text-shadow: 1px 1px 0 #f3ede7;
 }
@@ -154,7 +154,7 @@ body {
     border-radius: 20px;
     padding: 12px 32px;
     font-size: 1.1rem;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Roboto', 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
@@ -172,7 +172,7 @@ body {
 }
 .about h2 {
     font-size: 2.2rem;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     color: #17677a;
     text-shadow: 1px 1px 0 #c9a74a;
 }
@@ -184,7 +184,7 @@ body {
 }
 .gallery h2 {
     font-size: 2.2rem;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     color: #8b2f3c;
     text-shadow: 1px 1px 0 #f3ede7;
 }
@@ -210,7 +210,7 @@ body {
 }
 .contact h2 {
     font-size: 2.2rem;
-    font-family: 'Comic Sans MS', 'Pacifico', cursive;
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Pacifico', cursive;
     color: #8b2f3c;
     text-shadow: 1px 1px 0 #c9a74a;
 }
@@ -227,7 +227,7 @@ body {
     border: 3px solid #17677a;
     border-radius: 8px;
     font-size: 1rem;
-    font-family: inherit;
+    font-family: 'Roboto', 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
     background: #e7dac2;
     resize: none;
 }
@@ -293,4 +293,201 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+}
+@media (max-width: 1024px) {
+    .container {
+        max-width: 98vw;
+    }
+    .menu-items, .gallery-images {
+        gap: 18px;
+    }
+    .menu-item {
+        width: 220px;
+    }
+}
+@media (max-width: 768px) {
+    .header .container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .burger-btn {
+        display: flex !important;
+        z-index: 30;
+        position: fixed;
+        right: 18px;
+        top: 18px;
+        margin-left: 0;
+        background: #8b2f3c;
+        border-radius: 8px;
+        padding: 4px 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    }
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #8b2f3c;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 200px;
+        padding: 20px 0 20px 20px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+        border-radius: 0 0 0 16px;
+        display: none;
+        z-index: 15;
+    }
+    .nav.open {
+        display: flex;
+    }
+    .nav a {
+        margin: 10px 0;
+        color: #f3ede7;
+        font-size: 1.1rem;
+        text-shadow: 1px 1px 0 #2a2323;
+    }
+    .menu-items, .gallery-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+    .menu-item {
+        width: 80vw;
+        min-width: 0;
+    }
+    .gallery-images img {
+        width: 80vw;
+        height: 120px;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        width: 98vw;
+        padding: 0 2vw;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    .menu-item {
+        width: 96vw;
+        min-width: 0;
+        padding: 10px 6px 10px 6px;
+    }
+    .gallery-images img {
+        width: 96vw;
+        height: 90px;
+    }
+    .cta-btn, .load-btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+    .contact-form {
+        max-width: 98vw;
+    }
+}
+@media (max-width: 320px) {
+    .container {
+        width: 100vw;
+        padding: 0 1vw;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+    .hero h2 {
+        font-size: 0.9rem;
+    }
+    .menu-item {
+        width: 98vw;
+        min-width: 0;
+        padding: 6px 2px 6px 2px;
+    }
+    .gallery-images img {
+        width: 98vw;
+        height: 60px;
+    }
+    .cta-btn, .load-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    .contact-form {
+        max-width: 100vw;
+    }
+}
+
+.logo, h1, h2, h3 {
+    font-family: 'Luckiest Guy', cursive, 'Comic Sans MS', 'Comic Sans', cursive;
+}
+.nav, .menu-item, .about, .gallery, .contact, .footer, .cta-btn, .load-btn, .contact-form, .contact-form input, .contact-form textarea, .contact-form button {
+    font-family: 'Roboto', 'Comic Sans MS', 'Comic Sans', cursive, 'Courier New', Courier, monospace;
+}
+
+/* Burger menu styles */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    z-index: 20;
+}
+.burger-btn span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: #c9a74a;
+    border-radius: 2px;
+    transition: none;
+}
+.burger-btn.active span:nth-child(1),
+.burger-btn.active span:nth-child(2),
+.burger-btn.active span:nth-child(3) {
+    transform: none;
+    opacity: 1;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+    width: 100%;
+    padding-right: 70px;
+    box-sizing: border-box;
+}
+.show-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 16px;
+    background: #8b2f3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 2;
+}
+.show-btn:hover {
+    background: #c9a74a;
+    color: #2a2323;
 }

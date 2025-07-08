@@ -110,3 +110,138 @@ loadPizzasBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', fetchMenuData);
+
+// Contact form validation and show/hide password
+const contactForm = document.querySelector('.contact-form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const messageInput = document.getElementById('message');
+const togglePasswordBtn = document.getElementById('togglePassword');
+
+function showError(input, message) {
+    let error = input.parentElement.querySelector('.error-msg');
+    if (!error) {
+        error = document.createElement('div');
+        error.className = 'error-msg';
+        error.style.color = '#8b2f3c';
+        error.style.fontSize = '0.9em';
+        error.style.marginTop = '4px';
+        input.parentElement.appendChild(error);
+    }
+    error.textContent = message;
+}
+function clearError(input) {
+    const error = input.parentElement.querySelector('.error-msg');
+    if (error) error.remove();
+}
+
+function validateEmail(email) {
+    // Simple email regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function validatePassword(password) {
+    // At least 6 chars, at least one number
+    return /^(?=.*\d).{6,}$/.test(password);
+}
+
+if (togglePasswordBtn && passwordInput) {
+    togglePasswordBtn.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            togglePasswordBtn.textContent = 'Hide';
+        } else {
+            passwordInput.type = 'password';
+            togglePasswordBtn.textContent = 'Show';
+        }
+    });
+}
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        let valid = true;
+        // Name required
+        if (!nameInput.value.trim()) {
+            showError(nameInput, 'Name is required');
+            valid = false;
+        } else {
+            clearError(nameInput);
+        }
+        // Email required and valid
+        if (!emailInput.value.trim()) {
+            showError(emailInput, 'Email is required');
+            valid = false;
+        } else if (!validateEmail(emailInput.value.trim())) {
+            showError(emailInput, 'Enter a valid email');
+            valid = false;
+        } else {
+            clearError(emailInput);
+        }
+        // Password required and valid
+        if (!passwordInput.value.trim()) {
+            showError(passwordInput, 'Password is required');
+            valid = false;
+        } else if (!validatePassword(passwordInput.value.trim())) {
+            showError(passwordInput, 'At least 6 characters and a number');
+            valid = false;
+        } else {
+            clearError(passwordInput);
+        }
+        // Message required
+        if (!messageInput.value.trim()) {
+            showError(messageInput, 'Message is required');
+            valid = false;
+        } else {
+            clearError(messageInput);
+        }
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
+}
+
+// Burger menu functionality
+const burgerBtn = document.getElementById('burger-btn');
+const mainNav = document.getElementById('main-nav');
+if (burgerBtn && mainNav) {
+    burgerBtn.addEventListener('click', function() {
+        burgerBtn.classList.toggle('active');
+        mainNav.classList.toggle('open');
+        burgerBtn.setAttribute('aria-expanded', mainNav.classList.contains('open'));
+    });
+    // Close nav when a link is clicked (on mobile)
+    mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                burgerBtn.classList.remove('active');
+                mainNav.classList.remove('open');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}
+
+// Scroll to top button logic
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'block';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Cookie notification logic
+const cookieNotice = document.getElementById('cookieNotice');
+const acceptCookiesBtn = document.getElementById('acceptCookies');
+if (cookieNotice && acceptCookiesBtn) {
+    cookieNotice.style.display = 'block';
+    acceptCookiesBtn.addEventListener('click', function() {
+        cookieNotice.style.display = 'none';
+    });
+}
