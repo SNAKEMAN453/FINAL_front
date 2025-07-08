@@ -10,10 +10,10 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
-    <!-- Header -->
+
     <header class="header">
         <div class="container">
-            <h1 class="logo">Maku</h1>
+            <a href="index.html" class="logo-link"><h1 class="logo">Maku</h1></a>
             <button id="burger-btn" class="burger-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
                 <span></span><span></span><span></span>
             </button>
@@ -27,16 +27,16 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+
         <section id="hero" class="hero">
             <div class="container">
                 <h2>Welcome to Maku</h2>
                 <p>The best retro pizza & burger experience in town!</p>
-                <a href="#menu" class="cta-btn">See Our Menu</a>
+                <a href="booking.html" class="cta-btn">Book a Table</a>
             </div>
         </section>
 
-        <!-- Menu Section -->
+
         <section id="menu" class="menu">
             <div class="container">
                 <h2>Our Menu</h2>
@@ -45,20 +45,22 @@
                     <button id="load-pizzas" class="load-btn">Load More Pizzas</button>
                 </div>
                 <div id="menu-items" class="menu-items">
-                    <!-- Menu items will be loaded here by JS -->
+
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+
         <section id="about" class="about">
             <div class="container">
                 <h2>About Maku</h2>
-                <p>Maku brings you the classic taste of pizzas and burgers in a retro setting. Our recipes are inspired by the golden era of diners, with a modern twist!</p>
+                <p>Maku brings you the classic taste of pizzas and burgers in a retro setting. Our recipes are inspired by the golden era of diners, with a modern twist!<br><br>
+                Step into Maku and you'll be transported to a vibrant 90s burger joint founded in 1995, complete with neon lights, checkered floors, and the irresistible aroma of fresh-baked pizza and sizzling burgers. We pride ourselves on using only the freshest ingredients, hand-tossed dough, and juicy, flame-grilled patties. Whether you're here for a family dinner, a quick lunch, or a late-night snack, our friendly staff and cozy booths make every visit memorable.<br><br>
+                At Maku, we believe great food brings people together. Enjoy our signature pizzas, towering burgers, and classic sides in a fun, nostalgic atmosphere. Welcome to your new favorite spot in town!</p>
             </div>
         </section>
+        <hr class="section-separator">
 
-        <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Contact Us</h2>
@@ -67,15 +69,16 @@
                     <input type="email" id="email" name="email" placeholder="Your Email" required />
                     <div class="password-wrapper">
                         <input type="password" id="password" name="password" placeholder="Password" required />
+                        <button type="button" id="togglePassword" class="show-btn">Show</button>
                     </div>
                     <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send</button>
+                    <button type="submit" class="send-btn">Send</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Maku. All rights reserved.</p>

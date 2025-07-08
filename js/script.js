@@ -1,4 +1,3 @@
-// Fetch menu data from a public API (TheMealDB for demo)
 const menuContainer = document.getElementById('menu-items');
 const loadBurgersBtn = document.getElementById('load-burgers');
 const loadPizzasBtn = document.getElementById('load-pizzas');
@@ -34,18 +33,18 @@ async function fetchMenuData() {
         burgersLoaded = 0;
         renderMenu();
     } catch (e) {
-        // Fallback demo data
+
         allPizzas = [
             { name: 'Retro Margherita', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80', price: '$9.99', desc: 'Classic cheese & tomato pizza.' },
-            { name: 'Pepperoni Supreme', image: 'https://images.unsplash.com/photo-1548365328-8b849e6c7b77?auto=format&fit=crop&w=400&q=80', price: '$11.49', desc: 'Pepperoni, cheese, and more.' },
-            { name: 'Veggie Delight', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80', price: '$10.49', desc: 'Loaded with fresh veggies.' },
-            { name: 'BBQ Chicken Pizza', image: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80', price: '$12.49', desc: 'BBQ chicken, onions, and cheese.' }
+            { name: 'Pepperoni Supreme', image: 'image/peperoni.jfif', price: '$11.49', desc: 'Pepperoni, cheese, and more.' },
+            { name: 'Veggie Delight', image: 'image/veggie.jfif', price: '$10.49', desc: 'Loaded with fresh veggies.' },
+            { name: 'BBQ Chicken Pizza', image: 'image/bbq-chicken-pizza.webp', price: '$12.49', desc: 'BBQ chicken, onions, and cheese.' }
         ];
         allBurgers = [
             { name: 'Classic Cheeseburger', image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80', price: '$8.99', desc: 'Beef patty, cheese, and pickles.' },
-            { name: 'Double Patty Burger', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80', price: '$10.99', desc: 'Two patties, double the fun.' },
-            { name: 'Bacon Burger', image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&q=80', price: '$11.49', desc: 'Crispy bacon and cheese.' },
-            { name: 'Veggie Burger', image: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80', price: '$9.49', desc: 'A healthy veggie patty.' }
+            { name: 'Double Patty Burger', image: 'image/double-cheeeck.jpg', price: '$10.99', desc: 'Two patties, double the fun.' },
+            { name: 'Bacon Burger', image: 'image/bacon-burger.jfif', price: '$11.49', desc: 'Crispy bacon and cheese.' },
+            { name: 'Veggie Burger', image: 'image/veggie-burger.jpg', price: '$9.49', desc: 'A healthy veggie patty.' }
         ];
         pizzasLoaded = 0;
         burgersLoaded = 0;
@@ -55,7 +54,6 @@ async function fetchMenuData() {
 
 function renderMenu() {
     menuContainer.innerHTML = '';
-    // Pizzas
     if (allPizzas.length > 0) {
         const pizzaTitle = document.createElement('h3');
         pizzaTitle.textContent = 'Pizzas';
@@ -72,7 +70,7 @@ function renderMenu() {
             menuContainer.appendChild(div);
         });
     }
-    // Burgers
+
     if (allBurgers.length > 0) {
         const burgerTitle = document.createElement('h3');
         burgerTitle.textContent = 'Burgers';
@@ -111,7 +109,6 @@ loadPizzasBtn.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', fetchMenuData);
 
-// Contact form validation and show/hide password
 const contactForm = document.querySelector('.contact-form');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
@@ -137,11 +134,9 @@ function clearError(input) {
 }
 
 function validateEmail(email) {
-    // Simple email regex
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 function validatePassword(password) {
-    // At least 6 chars, at least one number
     return /^(?=.*\d).{6,}$/.test(password);
 }
 
@@ -160,14 +155,12 @@ if (togglePasswordBtn && passwordInput) {
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         let valid = true;
-        // Name required
         if (!nameInput.value.trim()) {
             showError(nameInput, 'Name is required');
             valid = false;
         } else {
             clearError(nameInput);
         }
-        // Email required and valid
         if (!emailInput.value.trim()) {
             showError(emailInput, 'Email is required');
             valid = false;
@@ -177,7 +170,6 @@ if (contactForm) {
         } else {
             clearError(emailInput);
         }
-        // Password required and valid
         if (!passwordInput.value.trim()) {
             showError(passwordInput, 'Password is required');
             valid = false;
@@ -187,7 +179,6 @@ if (contactForm) {
         } else {
             clearError(passwordInput);
         }
-        // Message required
         if (!messageInput.value.trim()) {
             showError(messageInput, 'Message is required');
             valid = false;
@@ -200,7 +191,6 @@ if (contactForm) {
     });
 }
 
-// Burger menu functionality
 const burgerBtn = document.getElementById('burger-btn');
 const mainNav = document.getElementById('main-nav');
 if (burgerBtn && mainNav) {
@@ -209,7 +199,6 @@ if (burgerBtn && mainNav) {
         mainNav.classList.toggle('open');
         burgerBtn.setAttribute('aria-expanded', mainNav.classList.contains('open'));
     });
-    // Close nav when a link is clicked (on mobile)
     mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 768) {
@@ -221,7 +210,6 @@ if (burgerBtn && mainNav) {
     });
 }
 
-// Scroll to top button logic
 const scrollTopBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', function() {
     if (window.scrollY > 200) {
@@ -236,7 +224,6 @@ if (scrollTopBtn) {
     });
 }
 
-// Cookie notification logic
 const cookieNotice = document.getElementById('cookieNotice');
 const acceptCookiesBtn = document.getElementById('acceptCookies');
 if (cookieNotice && acceptCookiesBtn) {
